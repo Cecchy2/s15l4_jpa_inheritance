@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Table(name = "eventi")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "tipo_evento")
 public abstract class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -102,5 +105,5 @@ public abstract class Evento {
     public void setNumeroMassimoPartecipanti(int numeroMassimoPartecipanti) {
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
-    
+
 }
