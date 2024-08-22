@@ -21,6 +21,10 @@ public class PartitaDiCalcio extends Evento {
         Gol_squadra_ospite = gol_squadra_ospite;
     }
 
+    public PartitaDiCalcio() {
+    }
+
+
     public PartitaDiCalcio(String squadra_di_casa, String squadra_ospite, String squadra_vincente, byte gol_squadra_di_casa, byte gol_squadra_ospite) {
         this.squadra_di_casa = squadra_di_casa;
         this.squadra_ospite = squadra_ospite;

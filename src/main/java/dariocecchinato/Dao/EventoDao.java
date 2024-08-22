@@ -3,6 +3,7 @@ package dariocecchinato.Dao;
 import dariocecchinato.entities.Concerto;
 import dariocecchinato.entities.Evento;
 import dariocecchinato.entities.GenereConcerto;
+import dariocecchinato.entities.PartitaDiCalcio;
 import dariocecchinato.exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -59,6 +60,16 @@ public class EventoDao {
     public List<Concerto> getConcertiPerGenere(GenereConcerto genereConcerto) {
         TypedQuery<Concerto> query = em.createQuery("Select c FROM Concerto c WHERE c.genere_Concerto = :genereConcerto", Concerto.class);
         query.setParameter("genereConcerto", genereConcerto);
+        return query.getResultList();
+    }
+
+    public List<PartitaDiCalcio> getPartiteVinteInCasa() {
+        TypedQuery<PartitaDiCalcio> query = em.createQuery("Select p From PartitaDiCalcio p WHERE p.squadra_di_casa = p.squadra_vincente", PartitaDiCalcio.class);
+        return query.getResultList();
+    }
+
+    public List<PartitaDiCalcio> getPartiteVinteInTrasferta() {
+        TypedQuery<PartitaDiCalcio> query = em.createQuery("Select p From PartitaDiCalcio p WHERE p.squadra_ospite = p.squadra_vincente", PartitaDiCalcio.class);
         return query.getResultList();
     }
 }

@@ -43,6 +43,9 @@ public class Concerto extends Evento {
     @Override
     public String toString() {
         return "Concerto{" +
+                getTitolo() +
+                getLocation() +
+                getDescrizione() +
                 "genere_Concerto=" + genere_Concerto +
                 ", in_Streaming=" + in_Streaming +
                 '}';
