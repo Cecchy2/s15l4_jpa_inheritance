@@ -63,13 +63,13 @@ public class EventoDao {
         return query.getResultList();
     }
 
-    public List<PartitaDiCalcio> getPartiteVinteInCasa() {
-        TypedQuery<PartitaDiCalcio> query = em.createQuery("Select p From PartitaDiCalcio p WHERE p.squadra_di_casa = p.squadra_vincente", PartitaDiCalcio.class);
+    public List<PartitaDiCalcio> findPartiteVinteInCasa() {
+        TypedQuery<PartitaDiCalcio> query = em.createNamedQuery("getPartiteVinteInCasa", PartitaDiCalcio.class);
         return query.getResultList();
     }
 
-    public List<PartitaDiCalcio> getPartiteVinteInTrasferta() {
-        TypedQuery<PartitaDiCalcio> query = em.createQuery("Select p From PartitaDiCalcio p WHERE p.squadra_ospite = p.squadra_vincente", PartitaDiCalcio.class);
+    public List<PartitaDiCalcio> findPartiteVinteInTrasferta() {
+        TypedQuery<PartitaDiCalcio> query = em.createNamedQuery("getPartiteVinteInTrasferta", PartitaDiCalcio.class);
         return query.getResultList();
     }
 }

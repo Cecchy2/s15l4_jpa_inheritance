@@ -10,6 +10,8 @@ import java.util.UUID;
 @Table(name = "eventi")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "tipo_evento")
+@NamedQuery(name = "getPartiteVinteInCasa", query = "Select p From PartitaDiCalcio p WHERE p.squadra_di_casa = p.squadra_vincente")
+@NamedQuery(name = "getPartiteVinteInTrasferta", query = "Select p From PartitaDiCalcio p WHERE p.squadra_ospite = p.squadra_vincente")
 public abstract class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

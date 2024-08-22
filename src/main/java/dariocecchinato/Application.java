@@ -79,13 +79,13 @@ public class Application {
         //cd.save(concerto2);
         //cd.save(concerto3);
 
-        System.out.println("******************CONCERTI IN STREAMING****************************");
+        System.out.println("******************  CONCERTI IN STREAMING  ****************************");
 
         List<Concerto> concertiInStreaming = ed.getConcertiInStreaming();
         concertiInStreaming.forEach(System.out::println);
 
 
-        System.out.println("******************CONCERTI ROCK****************************");
+        System.out.println("******************  CONCERTI ROCK  ****************************");
 
         List<Concerto> concertiRock = ed.getConcertiPerGenere(GenereConcerto.ROCK);
         concertiRock.forEach(System.out::println);
@@ -138,9 +138,9 @@ public class Application {
         );
 
         PartitaDiCalcio partita4 = new PartitaDiCalcio(
-                "El Clasico",
+                "Finale Coppa Spagnola",
                 LocalDateTime.of(2024, 3, 1, 20, 45),
-                "Il Clasico tra Real Madrid e Barcelona.",
+                "Finale tra Real Madrid e Barcelona.",
                 locationC,
                 TipoEvento.PUBBLICO,
                 81000,
@@ -186,14 +186,14 @@ public class Application {
         //pdc.save(partita5);
         //pdc.save(partita6);
 
-        System.out.println("****************PARTITE VINTE IN CASA*********************************");
+        System.out.println("****************  PARTITE VINTE IN CASA  *********************************");
 
-        List<PartitaDiCalcio> partiteVinteInCasa = ed.getPartiteVinteInCasa();
+        List<PartitaDiCalcio> partiteVinteInCasa = ed.findPartiteVinteInCasa();
         partiteVinteInCasa.forEach(System.out::println);
 
-        System.out.println("****************PARTITE VINTE IN Trasferta*********************************");
+        System.out.println("****************  PARTITE VINTE IN Trasferta  *********************************");
 
-        List<PartitaDiCalcio> getPartiteVinteInTrasferta = ed.getPartiteVinteInTrasferta();
+        List<PartitaDiCalcio> getPartiteVinteInTrasferta = ed.findPartiteVinteInTrasferta();
         getPartiteVinteInTrasferta.forEach(System.out::println);
 
 
