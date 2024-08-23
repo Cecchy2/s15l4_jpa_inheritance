@@ -52,6 +52,8 @@ public class EventoDao {
 
     }
 
+    //************************* ESERCIZIO1: DYNAMIC QUERY  *****************************
+
     public List<Concerto> getConcertiInStreaming() {
         TypedQuery<Concerto> query = em.createQuery("SELECT c FROM Concerto c WHERE c.in_Streaming = true", Concerto.class);
         return query.getResultList();
@@ -63,6 +65,7 @@ public class EventoDao {
         return query.getResultList();
     }
 
+    //*******************  ESERCIZIO2: NAMED QUERY *******************
     public List<PartitaDiCalcio> findPartiteVinteInCasa() {
         TypedQuery<PartitaDiCalcio> query = em.createNamedQuery("getPartiteVinteInCasa", PartitaDiCalcio.class);
         return query.getResultList();
